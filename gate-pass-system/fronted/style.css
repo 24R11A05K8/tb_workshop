@@ -1,0 +1,245 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5deb3 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Color Variables */
+:root {
+    --primary-red: #8f191d;
+    --primary-teal: #03505d;
+    --wheat: #f5deb3;
+    --white: #ffffff;
+}
+
+/* Container */
+.container {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Headers */
+h1 {
+    color: var(--primary-red);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+h2 {
+    color: var(--primary-teal);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--primary-teal);
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--wheat);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #6f1417;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(143, 25, 29, 0.3);
+}
+
+.btn-success {
+    background: #28a745;
+    color: var(--white);
+    margin-right: 10px;
+}
+
+.btn-danger {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--primary-teal);
+    color: var(--white);
+    margin-top: 10px;
+}
+
+/* Request Cards */
+.request-card {
+    background: var(--wheat);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-teal);
+}
+
+.request-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.request-card p {
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.status-pending {
+    background: #ffc107;
+    color: #000;
+}
+
+.status-approved {
+    background: #28a745;
+    color: var(--white);
+}
+
+.status-rejected {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+/* QR Code Display */
+.qr-display {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-display canvas {
+    border: 3px solid var(--primary-teal);
+    border-radius: 10px;
+    padding: 10px;
+    background: var(--white);
+}
+
+/* Scanner */
+#reader {
+    border: 3px solid var(--primary-teal);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid var(--primary-red);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    color: var(--primary-teal);
+    font-style: italic;
+}
+
+/* Logout Button */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background: #6f1417;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderator Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    
+    <div class="container" style="max-width: 900px;">
+        <h1>Moderator Dashboard</h1>
+        <h2 id="welcomeMsg"></h2>
+        
+        <div id="message"></div>
+        
+        <h3 style="color: #03505d; margin-bottom: 20px;">Pending Requests</h3>
+        <div id="pendingRequests">
+            <p class="loading">Loading requests...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        if (!localStorage.getItem('userRole') || localStorage.getItem('userRole') !== 'moderator') {
+            window.location.href = 'index.html';
+        }
+        loadModeratorRequests();
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatekeeper Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    
+    <div class="container" style="max-width: 700px;">
+        <h1>Gatekeeper Dashboard</h1>
+        <h2 id="welcomeMsg"></h2>
+        
+        <div id="message"></div>
+        
+        <!-- Manual Verification -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #03505d; margin-bottom: 20px;">Verify Gate Pass</h3>
+            <form id="verifyForm">
+                <div class="form-group">
+                    <label>Enter Pass ID</label>
+                    <input type="text" id="passId" placeholder="Enter gate pass ID" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Verify Pass</button>
+            </form>
+        </div>
+        
+        <!-- Verification Result -->
+        <div id="verificationResult"></div>
+        
+        <!-- All Approved Passes -->
+        <div>
+            <h3 style="color: #03505d; margin-bottom: 20px;">All Approved Passes</h3>
+            <div id="approvedPasses">
+                <p class="loading">Loading approved passes...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        if (!localStorage.getItem('userRole') || localStorage.getItem('userRole') !== 'gatekeeper') {
+            window.location.href = 'index.html';
+        }
+        loadApprovedPasses();
+    </script>
+</body>
+</html>

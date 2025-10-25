@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Pass System - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gate Pass System</h1>
+        <h2>Login to Continue</h2>
+        
+        <div id="message"></div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Select Role</label>
+                <select id="role" required>
+                    <option value="">Choose your role</option>
+                    <option value="student">Student</option>
+                    <option value="moderator">Moderator</option>
+                    <option value="gatekeeper">Gatekeeper</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        
+        <p style="margin-top: 20px; text-align: center; color: #666; font-size: 12px;">
+            Demo credentials: student1/pass123, moderator1/pass123, keeper1/pass123
+        </p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

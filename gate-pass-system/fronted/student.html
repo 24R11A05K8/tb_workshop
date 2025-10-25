@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    
+    <div class="container" style="max-width: 800px;">
+        <h1>Student Dashboard</h1>
+        <h2 id="welcomeMsg"></h2>
+        
+        <div id="message"></div>
+        
+        <!-- Create New Request -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #03505d; margin-bottom: 20px;">Create Gate Pass Request</h3>
+            <form id="requestForm">
+                <div class="form-group">
+                    <label>Reason for Going Out</label>
+                    <textarea id="reason" placeholder="Enter your reason (e.g., Medical appointment, Family emergency, etc.)" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Destination</label>
+                    <input type="text" id="destination" placeholder="Where are you going?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Expected Return Time</label>
+                    <input type="datetime-local" id="returnTime" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </div>
+        
+        <!-- My Requests -->
+        <div>
+            <h3 style="color: #03505d; margin-bottom: 20px;">My Requests</h3>
+            <div id="requestsList">
+                <p class="loading">Loading your requests...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        if (!localStorage.getItem('userRole') || localStorage.getItem('userRole') !== 'student') {
+            window.location.href = 'index.html';
+        }
+        loadStudentRequests();
+    </script>
+</body>
+</html>

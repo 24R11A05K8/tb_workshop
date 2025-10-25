@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "username": "student1",
+      "password": "pass123",
+      "role": "student"
+    },
+    {
+      "username": "moderator1",
+      "password": "pass123",
+      "role": "moderator"
+    },
+    {
+      "username": "keeper1",
+      "password": "pass123",
+      "role": "gatekeeper"
+    }
+  ],
+  "requests": [
+    {
+      "id": "GP1761319567663",
+      "studentName": "student1",
+      "reason": "medical appointement",
+      "destination": "hopital",
+      "returnTime": "2025-10-25T14:30",
+      "status": "approved",
+      "timestamp": "2025-10-24T15:26:07.663Z",
+      "moderatorRemarks": "after this u need to be regular to college",
+      "moderatorName": "moderator1",
+      "processedAt": "2025-10-24T15:26:52.323Z"
+    },
+    {
+      "id": "GP1761321306669",
+      "studentName": "student1",
+      "reason": "Medical appointment at city hospital",
+      "destination": "City Hospital",
+      "returnTime": "2025-10-25T18:00:00",
+      "status": "approved",
+      "timestamp": "2025-10-24T15:55:06.669Z",
+      "moderatorRemarks": "Approved for medical reason",
+      "moderatorName": "moderator1",
+      "processedAt": "2025-10-24T16:01:58.405Z"
+    }
+  ]
+}
